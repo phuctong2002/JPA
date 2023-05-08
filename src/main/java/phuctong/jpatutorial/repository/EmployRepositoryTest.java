@@ -9,6 +9,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import phuctong.jpatutorial.JpatutorialApplication;
 import phuctong.jpatutorial.entity.Employee;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith( SpringExtension.class )
@@ -25,4 +27,14 @@ public class EmployRepositoryTest {
         Employee result = employeeRepository.findById( employee.getId()).get();
         assertEquals(employee.getId(), result.getId());// dung de xac minh gia tri mong doi va gia tri thuc te co bang nhau khong
     }
+    @Test
+    public void testFindByName(){
+        Employee employee = new Employee();
+        employeeRepository.save(employee);
+        List<Employee> result = employeeRepository.findByName( employee.getName());
+        assertEquals(employee.getId(), result.get(0).getId());
+    }
+
+
+
 }

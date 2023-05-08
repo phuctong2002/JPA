@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface IEmployeeRepository extends CrudRepository<Employee, Integer> {
-    public List<Employee> getByName( String name);
-    public List<Employee> getByAge( int age);
+    public List<Employee> findByName( String name);
+    public List<Employee> findByAge( int age);
 
 }

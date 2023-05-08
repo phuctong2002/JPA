@@ -31,7 +31,7 @@ public class EmployeeService {
     }
 
     public List<Employee> getEmployeesByAge( int age){
-        List<Employee> result = repository.getByAge( age);
+        List<Employee> result = repository.findByAge( age);
         return result;
     }
 }

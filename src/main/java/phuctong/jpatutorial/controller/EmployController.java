@@ -2,6 +2,7 @@ package phuctong.jpatutorial.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 import phuctong.jpatutorial.entity.Employee;
 import phuctong.jpatutorial.service.EmployeeService;
@@ -13,6 +14,10 @@ import java.util.List;
 public class EmployController {
     @Autowired
     EmployeeService employeeService;
+
+    @Autowired
+    ApplicationContext context;
+
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
         return employeeService.getAllEmployees();
